@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
 
+:root {
+	--line-border-fill: #3498db;
+	--line-border-empty: #e0e0e0;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -28,19 +33,19 @@ body {
 	width: 325px;
 }
 
-.progress-containter::before {
+.progress-container::before {
 	content: '';
 	background-color: #e0e0e0;
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
+	transform: translateY(-25%);
 	left: 0;
 	height: 4px;
 	width: 100%;
 }
 
 .progress {
-	background-color: #3498db;
+	background-color: var(--line-border-fill);
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -48,4 +53,29 @@ body {
 	height: 4px;
 	width: 0%;
 	transition: 0.4 ease;
+}
+
+.circle {
+	background-color: #fff;
+	color: #999;
+	border-radius: 50%;
+	border: 3px solid var(--line-border-empty);
+	height: 30px;
+	width: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.4s ease;
+}
+
+.circle.active {
+	border-color: var(--line-border-fill);
+}
+
+.btn {
+	background-color: var(--line-border-fill);
+	color: #fff;
+	border: 0;
+	border-radius: 2em;
+	cursor: pointer;
 }
