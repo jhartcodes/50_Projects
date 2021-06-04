@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
 :root {
 	--line-border-fill: #3498db;
@@ -10,7 +10,7 @@
 }
 
 body {
-	font-family: 'Sigmar One', cursive;
+	font-family: 'ZCOOL KuaiLe', cursive;
 	display: flex;
 	margin: 0;
 	flex-direction: column;
@@ -35,13 +35,14 @@ body {
 
 .progress-container::before {
 	content: '';
-	background-color: #e0e0e0;
+	background-color: var(--line-border-empty);
 	position: absolute;
 	top: 50%;
 	transform: translateY(-25%);
 	left: 0;
 	height: 4px;
 	width: 100%;
+	z-index: -1;
 }
 
 .progress {
@@ -59,12 +60,12 @@ body {
 	background-color: #fff;
 	color: #999;
 	border-radius: 50%;
-	border: 3px solid var(--line-border-empty);
 	height: 30px;
 	width: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border: 3px solid var(--line-border-empty);
 	transition: 0.4s ease;
 }
 
@@ -76,6 +77,23 @@ body {
 	background-color: var(--line-border-fill);
 	color: #fff;
 	border: 0;
-	border-radius: 2em;
+	border-radius: 6px;
 	cursor: pointer;
+	font-family: inherit;
+	padding: 8px 30px;
+	margin: 5px;
+	font-size: 12px;
+}
+
+.btn:active {
+	transform: scale(0.98);
+}
+
+.btn:focus {
+	outline: 0;
+}
+
+.btn:disabled {
+	background-color: var(--line-border-empty);
+	cursor: not-allowed;
 }
