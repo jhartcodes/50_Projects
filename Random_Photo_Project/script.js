@@ -1,8 +1,6 @@
 const container = document.querySelector(".container");
 const unsplashURL = "https://source.unsplash.com/random/";
-const rows = 10;
-
-console.log("script running");
+const rows = 5;
 
 for (let i = 0; i < rows * 3; i++) {
   const img = document.createElement("img");
@@ -11,13 +9,9 @@ for (let i = 0; i < rows * 3; i++) {
 }
 
 function getRandomSize() {
-  return `${getRandomNum()}x${getRandomNum()}}`;
+  return `${getRandomNr()}x${getRandomNr()}`;
 }
 
-console.log(getRandomSize());
-
-function getRandomNum() {
+function getRandomNr() {
   return Math.floor(Math.random() * 10) + 300;
 }
-
-console.log(getRandomNum(), "should have a number");
